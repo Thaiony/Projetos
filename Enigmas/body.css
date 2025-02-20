@@ -41,3 +41,11 @@ button:hover {
     margin-top: 20px;
     font-weight: bold;
 }
+
+.error {
+    color: #dc3545;
+}
+
+.success {
+    color: #28a745;
+}

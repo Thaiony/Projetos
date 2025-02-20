@@ -3,19 +3,15 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo de Enigmas</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Enigmas</title>
+    <script src="const question.js" defer></script>
 </head>
 <body>
-    <div class="container">
-        <h1>Jogo de Enigmas</h1>
-        <div id="question-container">
-            <p id="question"></p>
-            <input type="text" id="answer" placeholder="Digite sua resposta">
-            <button onclick="checkAnswer()">Enviar</button>
-        </div>
+    <div>
+        <h1 id="question">Carregando pergunta...</h1>
+        <input type="text" id="answer" placeholder="Digite sua resposta">
+        <button onclick="checkAnswer()">Enviar</button>
         <p id="feedback"></p>
     </div>
-    <script src="script.js"></script>
 </body>
 </html>

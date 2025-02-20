@@ -8,7 +8,11 @@ let currentQuestionIndex = 0;
 
 function showQuestion() {
     const questionElement = document.getElementById('question');
-    questionElement.textContent = questions[currentQuestionIndex].question;
+    if (questionElement) {
+        questionElement.textContent = questions[currentQuestionIndex].question;
+    } else {
+        console.error("Elemento com id 'question' não encontrado.");
+    }
 }
 
 function checkAnswer() {
@@ -31,4 +35,7 @@ function checkAnswer() {
     answerElement.value = '';
 }
 
-document.addEventListener('DOMContentLoaded', showQuestion);
+document.addEventListener('DOMContentLoaded', (event) => {
+    console.log("Documento carregado e analisado.");
+    showQuestion();
+});
