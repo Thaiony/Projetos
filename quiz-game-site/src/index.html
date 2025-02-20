@@ -1,17 +1,18 @@
 <!DOCTYPE html>
-<html lang="pt-BR">
+<html lang="pt-br">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jogo de Perguntas e Respostas</title>
+    <title>Quiz Game</title>
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <h1 id="title">Jogo de Perguntas</h1>
     <div id="quiz-container">
-        <h1>Jogo de Perguntas e Respostas</h1>
-        <div id="question"></div>
-        <div id="options"></div>
-        <button id="submit" onclick="checkAnswer()">Enviar Resposta</button>
+        <div id="question-container">
+            <div id="question">Pergunta</div>
+            <div id="answer-buttons" class="btn-container"></div>
+        </div>
     </div>
     <script src="app.js"></script>
 </body>

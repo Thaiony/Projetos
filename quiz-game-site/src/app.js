@@ -1,66 +1,73 @@
 const questions = [
     {
         question: "Qual é a capital da França?",
-        answers: ["Berlim", "Madri", "Paris", "Lisboa"],
-        correct: 2
+        answers: [
+            { text: "Paris", correct: true },
+            { text: "Londres", correct: false },
+            { text: "Berlim", correct: false },
+            { text: "Madrid", correct: false }
+        ]
     },
     {
-        question: "Qual é o maior planeta do sistema solar?",
-        answers: ["Terra", "Marte", "Júpiter", "Saturno"],
-        correct: 2
+        question: "Qual é a capital da Alemanha?",
+        answers: [
+            { text: "Berlim", correct: true },
+            { text: "Paris", correct: false },
+            { text: "Londres", correct: false },
+            { text: "Madrid", correct: false }
+        ]
     },
     {
-        question: "Quem escreveu 'Dom Casmurro'?",
-        answers: ["Machado de Assis", "José de Alencar", "Clarice Lispector", "Jorge Amado"],
-        correct: 0
-    },
-    {
-        question: "Qual é a fórmula da água?",
-        answers: ["H2O", "CO2", "O2", "NaCl"],
-        correct: 0
+        question: "Complete a frase: 'O Brasil é um país ...'",
+        answers: [
+            { text: "asiático", correct: false },
+            { text: "europeu", correct: false },
+            { text: "africano", correct: false },
+            { text: "americano", correct: true }
+        ]
     }
 ];
+
+const questionContainer = document.getElementById('question-container');
+const questionElement = document.getElementById('question');
+const answerButtonsElement = document.getElementById('answer-buttons');
 
 let currentQuestionIndex = 0;
 
 function startGame() {
     currentQuestionIndex = 0;
-    showQuestion();
+    showQuestion(questions[currentQuestionIndex]);
 }
 
-function showQuestion() {
-    const questionContainer = document.getElementById('question-container');
-    const question = questions[currentQuestionIndex];
-    
-    questionContainer.innerHTML = `
-        <h2>${question.question}</h2>
-        <ul>
-            ${question.answers.map((answer, index) => `
-                <li>
-                    <button onclick="checkAnswer(${index})">${answer}</button>
-                </li>
-            `).join('')}
-        </ul>
-    `;
+function showQuestion(question) {
+    questionElement.innerText = question.question;
+    answerButtonsElement.innerHTML = '';
+    question.answers.forEach(answer => {
+        const button = document.createElement('button');
+        button.innerText = answer.text;
+        button.classList.add('btn');
+        if (answer.correct) {
+            button.dataset.correct = answer.correct;
+        }
+        button.addEventListener('click', selectAnswer);
+        answerButtonsElement.appendChild(button);
+    });
 }
 
-function checkAnswer(selectedIndex) {
-    const question = questions[currentQuestionIndex];
-    if (selectedIndex === question.correct) {
+function selectAnswer(e) {
+    const selectedButton = e.target;
+    const correct = selectedButton.dataset.correct === 'true';
+    if (correct) {
         currentQuestionIndex++;
         if (currentQuestionIndex < questions.length) {
-            showQuestion();
+            showQuestion(questions[currentQuestionIndex]);
         } else {
-            showEndScreen();
+            alert('Você completou o quiz!');
+            startGame();
         }
     } else {
-        alert("Resposta errada! Tente novamente.");
+        alert('Resposta incorreta. Tente novamente.');
     }
 }
 
-function showEndScreen() {
-    const questionContainer = document.getElementById('question-container');
-    questionContainer.innerHTML = `<h2>Parabéns! Você completou o jogo!</h2>`;
-}
-
-document.addEventListener('DOMContentLoaded', startGame);
+startGame();

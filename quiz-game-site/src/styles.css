@@ -1,13 +1,21 @@
 body {
     font-family: Arial, sans-serif;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
     background-color: #f4f4f4;
     margin: 0;
-    padding: 20px;
 }
 
 h1 {
     text-align: center;
     color: #333;
+}
+
+#title {
+    margin-top: 20px;
+    text-align: center;
 }
 
 .quiz-container {
@@ -56,4 +64,37 @@ button {
 
 button:hover {
     background: #218838;
+}
+
+#quiz-container {
+    width: 300px;
+    background: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.btn-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.btn {
+    background: #007bff;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px;
+    margin: 5px 0;
+    cursor: pointer;
+}
+
+.btn:hover {
+    background: #0056b3;
+}
+
+#next-btn {
+    display: none;
 }
