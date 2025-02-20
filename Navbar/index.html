@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Navbar Responsiva</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #613aee;
+            padding: 10px;
+        }
+        .navbar a {
+            color: rgb(17, 17, 17);
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+        .navbar a:hover {
+            background-color: #613aee;
+            color: rgb(2, 4, 32);
+        }
+        .navbar .menu {
+            display: none;
+        }
+        .navbar .menu a {
+            border: 1px solid #333;
+            border-radius: 5px;
+            margin: 0 5px;
+        }
+        .navbar .menu-icon {
+            display: block;
+            cursor: pointer;
+        }
+        @media (min-width: 600px) {
+            .navbar .menu {
+                display: flex;
+            }
+            .navbar .menu-icon {
+                display: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">
+        <a href="#home">Olá bem vindo</a>
+        <div class="menu">
+            <a href="#services">Serviços</a>
+            <a href="#about">Sobre</a>
+            <a href="#contact">Contatos</a>
+        </div>
+        <div class="menu-icon" onclick="toggleMenu()">☰</div>
+    </div>
+
+    <script>
+        function toggleMenu() {
+            const menu = document.querySelector('.navbar .menu');
+            if (menu.style.display === 'flex') {
+                menu.style.display = 'none';
+            } else {
+                menu.style.display = 'flex';
+            }
+        }
+    </script>
+</body>
+</html>
