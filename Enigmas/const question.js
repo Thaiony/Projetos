@@ -1,7 +1,10 @@
 const questions = [
     { question: "O que é, o que é? Cai em pé e corre deitado.", answer: "chuva" },
     { question: "O que é, o que é? Tem cabeça, tem dente, tem barba, não é gente.", answer: "alho" },
-    // Adicione mais perguntas conforme necessário
+    { question: "O que é, o que é? Quanto mais se tira, maior ele fica.", answer: "buraco" },
+    { question: "O que é, o que é? Quanto mais seca, mais molhada fica.", answer: "toalha" },
+
+    // Mais perguntnas aqui
 ];
 
 let currentQuestionIndex = 0;

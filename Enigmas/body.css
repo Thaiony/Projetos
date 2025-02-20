@@ -5,7 +5,7 @@ body {
     align-items: center;
     height: 100vh;
     margin: 0;
-    background-color: #f0f0f0;
+    background-color: #e0f7fa; /* Nova cor de fundo */
 }
 
 .container {
@@ -14,6 +14,8 @@ body {
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    width: 80%; /* Centralizar o conteúdo */
+    max-width: 600px; /* Limitar a largura máxima */
 }
 
 input[type="text"] {

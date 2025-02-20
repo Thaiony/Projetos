@@ -4,11 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Enigmas</title>
-    <script src="const question.js" defer></script>
+    <link rel="stylesheet" href="body.css">
+    <script src="script.js" defer></script>
+    <script src="loadQuestions.js" defer></script>
 </head>
 <body>
-    <div>
-        <h1 id="question">Carregando pergunta...</h1>
+    <div class="container">
+        <h1>Bem-vindo ao Enigmas</h1>
+        <h2 id="question">Carregando pergunta...</h2>
         <input type="text" id="answer" placeholder="Digite sua resposta">
         <button onclick="checkAnswer()">Enviar</button>
         <p id="feedback"></p>
